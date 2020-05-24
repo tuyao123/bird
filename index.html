@@ -18,15 +18,33 @@
 
 <style>
 #time{
-font-size: 36px;
-font-weight: 580;
+font-family: 'Roboto-Bold', 'Roboto Bold', 'Roboto', sans-serif;
+font-size: 28px;
+font-weight: 700;
 color: #000000;
 padding:-2 0 0;
 margin:2 5 5 5;
 position:absolute;
-top:200px;
-left:23px;
-z-index:9999
+top:210px;
+left:27px;
+z-index:9999;
+font-style: normal;
+}
+</style>
+
+	<style>
+#time1{
+font-family: 'Roboto-Bold', 'Roboto Bold', 'Roboto', sans-serif;
+font-size: 36px;
+font-weight: 700;
+color: #000000;
+padding:-2 0 0;
+margin:2 5 5 5;
+position:absolute;
+top:203px;
+left:170px;
+z-index:9999;
+font-style: normal;
 }
 </style>
 
@@ -1362,7 +1380,7 @@ font-size: 12px;
 		     		校园最安全，外出有风险
 		     	</div> <div style="padding-top: 2px; text-align: center; font-size: 14px; display: none;">
 		     		外出进行科研工作的
-		     	</div> <div class="mint-text header mt-color-grey" style="padding-top: 30px;">初始校园码</div></div></div> <div class="mint-layout-container OPjczlssvm" style=""><div style="background-color: white; padding-bottom: 100px; min-height: 500px;"><div style="padding: 10px 0px 0px 25px;"><div class="jkmgxsj-title">当前时间：</div> <div><span class="jkmgxsj-rq"></span><span class="jkmgxsj-sj">.</span></div></div> <div style="line-height: 30px; padding-top: 4px; padding-left: 25px; font-size: 12px; display: none;">
+		     	</div> <div class="mint-text header mt-color-grey" style="padding-top: 30px;">初始校园码</div></div></div> <div class="mint-layout-container OPjczlssvm" style=""><div style="background-color: white; padding-bottom: 100px; min-height: 500px;"><div style="padding: 10px 0px 0px 25px;"><div class="jkmgxsj-title">当前时间：</div><div><span class="jkmgxsj-rq"></span><span class="jkmgxsj-sj">.</span></div></div> <div style="line-height: 30px; padding-top: 4px; padding-left: 25px; font-size: 12px; display: none;">
 		     		尚未完成报到登记，请于
 		     		<span style="color: rgb(255, 185, 80);">2020-05-23</span> <span style="display: none;">至</span> <span style="color: rgb(255, 185, 80); display: none;">2020-05-23</span>
 		     		到校报到
@@ -1427,11 +1445,16 @@ strDate =  "星期日"
 }
 year = today.getYear();
 month = today.getMonth()+1;
+month=month>9?month:"0"+month;
 date = today.getDate();
+date=date>9?date:"0"+date;
 hour = today.getHours();
+hour=hour>9?hour:"0"+hour;
 minute =today.getMinutes();
+minute=minute>9?minute:"0"+minute;
 second = today.getSeconds();
-document.getElementById('time').innerHTML = month + "月" + date + "日  "+hour + ":" + minute + ":" + second;
+second=second>9?second:"0"+second;
+document.getElementById('time').innerHTML = month + "月" + date + "日";
 setTimeout("showtime();", 1000);
 }
 </script>
@@ -1472,15 +1495,22 @@ strDate =  "星期日"
 }
 year = today.getYear();
 month = today.getMonth()+1;
+month=month>9?month:"0"+month;
 date = today.getDate();
+date=date>9?date:"0"+date;
 hour = today.getHours();
+hour=hour>9?hour:"0"+hour;
 minute =today.getMinutes();
+minute=minute>9?minute:"0"+minute;
 second = today.getSeconds();
-document.getElementById('time').innerHTML = hour + ":" + minute + ":" + second;
+second=second>9?second:"0"+second;
+document.getElementById('time1').innerHTML = hour + ":" + minute + ":" + second;
 setTimeout("showtime1();", 1000);
 }
 </script>
 
 <div id="time"></div>
 <script language="javascript"> showtime();</script>
+<div id="time1"></div>
+<script language="javascript"> showtime1();</script>
 </body></html>
